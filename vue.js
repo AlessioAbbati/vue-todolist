@@ -4,7 +4,10 @@ const app = Vue.createApp({
             newTodo: '',
             inputError: false,
             todos: [
-                
+                {
+                    Text: '',
+                    done: '',
+                },
             ],
         };
     },
