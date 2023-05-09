@@ -27,3 +27,6 @@ img {
     display: flex;
     justify-content: center;
 }
+i {
+    cursor: pointer;
+}

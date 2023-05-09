@@ -5,8 +5,20 @@ const app = Vue.createApp({
             inputError: false,
             todos: [
                 {
-                    Text: '',
-                    done: '',
+                    Text: 'fare la spesa',
+                    done: true,
+                },
+                {
+                    Text: 'passare lo straccio',
+                    done: false,
+                },
+                {
+                    Text: 'portare fuori il cane',
+                    done: true,
+                },
+                {
+                    Text: 'fare la borsa',
+                    done: true,
                 },
             ],
         };
@@ -22,6 +34,9 @@ const app = Vue.createApp({
                 this.inputError = true;
             }
 
+        },
+        deleteItem(index) {
+            this.todos.splice(index, 1);
         },
 
     },
