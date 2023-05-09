@@ -30,3 +30,13 @@ img {
 i {
     cursor: pointer;
 }
+.completed {
+    text-decoration: line-through;
+}
+
+
+
+
+
+
+

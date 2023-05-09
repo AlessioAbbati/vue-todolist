@@ -17,15 +17,15 @@
     <div id="app">
       <div class="nuovo-el">
         <input @keyup.enter="addTodo" type="text" placeholder="Nuovo elemento" v-model="newTodo">
-        <button @click="addTodo">Aggiungi</button>
+        <button @click="addTodo(newTodo)">Aggiungi</button>
         <small v-show="inputError" style="color: red;">inserisci elemento</small>
       </div>
 
       <div class="container">
         <ul v-if="todos.length != 0">
-            <li v-for="(todo, index) in todos">
-              {{ todo.text }}
-              <i @click="deleteItem" class="bi bi-x-circle"></i>
+            <li v-for="(todo, index) in todos" :key="index">
+                <span :class="{ 'completed': todo.done }" @click="toggleDone(index)">{{ todo.Text }}</span>
+                <i @click="deleteItem" class="bi bi-x-circle"></i>
             </li>
         </ul>
       </div>

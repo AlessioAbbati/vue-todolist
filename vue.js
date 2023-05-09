@@ -1,8 +1,8 @@
 const app = Vue.createApp({
     data() {
         return {
-            newTodo: '',
             inputError: false,
+            newTodo: '',
             todos: [
                 {
                     Text: 'fare la spesa',
@@ -27,7 +27,10 @@ const app = Vue.createApp({
         addTodo() {
             let cleanedTodo = this.newTodo.trim();
             if (cleanedTodo != '') {
-                this.todos.unshift(this.newTodo);
+                this.todos.unshift({
+                    Text: this.newTodo,
+                    done: false,
+                });
                 this.newTodo = '';
                 this.inputError = false;
             } else {
@@ -38,8 +41,12 @@ const app = Vue.createApp({
         deleteItem(index) {
             this.todos.splice(index, 1);
         },
+        toggleDone(index) {
+            this.todos[index].done = !this.todos[index].done;
+        },
 
     },
+    
 });
 
 
