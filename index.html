@@ -18,6 +18,7 @@
       <div class="nuovo-el">
         <input @keyup.enter="addTodo" type="text" placeholder="Nuovo elemento" v-model="newTodo">
         <button @click="addTodo">Aggiungi</button>
+        <small v-show="inputError" style="color: red;">inserisci elemento</small>
       </div>
 
       <div class="container">
