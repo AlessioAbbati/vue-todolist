@@ -29,6 +29,7 @@ img {
 }
 i {
     cursor: pointer;
+    padding-left: 1rem;
 }
 .completed {
     text-decoration: line-through;
